@@ -1,0 +1,23 @@
+.Container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: content-box;
+  .App {
+    position: relative;
+    display: inline-block;
+    width: 33.33%;
+    height: 100%;
+    .MapTips {
+      z-index: 1100;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 5px 10px;
+      background-color: #fff8;
+      border: 1px solid #000;
+      border-radius: 5px;
+      user-select: none;
+    }
+  }
+}

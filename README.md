@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# A demo, helps you to fix the special spatial transform into the `GCJ02` CRS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to use
 
-## Available Scripts
+I recommend you manage the project's dependencies by using the `Yarn` tool.
 
-In the project directory, you can run:
+```bash
+yarn
+yarn start
 
-### `npm start`
+-------------------
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Compiled successfully!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can now view map-on-react in the browser.
+  Local:            http://localhost:3000
 
-### `npm test`
+Note that the development build is not optimized.
+To create a production build, use yarn build.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+webpack compiled successfully
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+As you see on your browser page, there are three maps horizontal. From left to right, the first one is OpenStreetMap, which is well known with the coordinate reference system or the CRS, named the `WGS84`. And the rest maps are GaoDeMap, which is a famous Chinese map provider with the CRS `GCJ02`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I select a position located at Hong Kong Airport from the OpenStreetMap, and the coordinates are `[22.31292, 113.92715]`, just inside the West Hall of the Airport. Now you should notice the second map, the central one, rendering the mislocated point with some offsets.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Sometimes, we could transform the point from `WGS84` to `GCJ02` and put it on the GaoDeMap exactly indeed. Or, do you really want to do this when you confront a lot of points, polylines or polygons? It will hurt the experience while you do lots of data transforms on your page. Therefore, I suggest you do this before the data is fetched to the Front-end.
 
-### `npm run eject`
+The most recommended way is to do like this demo. Focus on the third map, the right one, and you would find the point is in the right position. Aha, the right map shows the right position. Finally, you could get what I have done on my codes, and I hope it will help you to deal with this issue. Clone the repository and put your hands dirty. If there are any issues, please contact me! Thanks a lot.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![image](./readme/transform_demo.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## References
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> - Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps.
+>   - https://leafletjs.com/
+> - coordtransform
+>   - https://www.npmjs.com/package/coordtransform
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Furthermore
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You could try your layers this way, and if you have any questions. It would be regardful for me to recieve your comments.
