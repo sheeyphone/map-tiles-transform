@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { MapContext } from "./LMap";
+import { MapContext } from "map-on-react";
 
 class LMarker extends React.Component {
   constructor() {
