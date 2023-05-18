@@ -6211,10 +6211,10 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
-map-on-react@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.npmjs.org/map-on-react/-/map-on-react-0.1.5.tgz#c2764b533ebc948c770518b9b0ab40e8a729411c"
-  integrity sha512-EeRzqqLkq+tsipf4mmi+R+EMinRsbDiMrcf0BocSyHHc/ndfVS4ZI/96l3ixCE6Adm2TgH2d7S7icPpdbFINNg==
+map-on-react@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.npmjs.org/map-on-react/-/map-on-react-0.1.7.tgz#853782fe399644c9fdc458a3cca77c32f3d0d628"
+  integrity sha512-v/Jx6JGeWdxlXloH8J1pJSTSVteWkcKlba8IvrdbJbxiAk7RMdXulNe0Z9yYZteGRNhaWPNfG/SGn/jOc4morQ==
   dependencies:
     "@babel/polyfill" "^7.12.1"
     "@testing-library/jest-dom" "^5.16.5"
