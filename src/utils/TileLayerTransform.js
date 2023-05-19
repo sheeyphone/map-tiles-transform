@@ -1,4 +1,4 @@
-import { wgs84togcj02 } from "coordtransform";
+import { wgs84togcj02 } from 'coordtransform';
 
 // Define the function we could use after.
 function getParamString(obj, existingUrl, uppercase) {
@@ -6,13 +6,13 @@ function getParamString(obj, existingUrl, uppercase) {
   for (var i in obj) {
     params.push(
       encodeURIComponent(uppercase ? i.toUpperCase() : i) +
-        "=" +
+        '=' +
         encodeURIComponent(obj[i])
     );
   }
   return (
-    (!existingUrl || existingUrl.indexOf("?") === -1 ? "?" : "&") +
-    params.join("&")
+    (!existingUrl || existingUrl.indexOf('?') === -1 ? '?' : '&') +
+    params.join('&')
   );
 }
 
@@ -46,12 +46,12 @@ if (L && L.TileLayer && L.TileLayer.WMS) {
         bounds = toBounds(crs.project(pt1Trans), crs.project(pt2Trans)),
         min = bounds.min,
         max = bounds.max,
-        bbox = [min.x, min.y, max.x, max.y].join(","), // left-bottom -> right-top
+        bbox = [min.x, min.y, max.x, max.y].join(','), // left-bottom -> right-top
         url = L.TileLayer.prototype.getTileUrl.call(this, coords);
       return (
         url +
         getParamString(this.wmsParams, url, this.options.uppercase) +
-        (this.options.uppercase ? "&BBOX=" : "&bbox=") +
+        (this.options.uppercase ? '&BBOX=' : '&bbox=') +
         bbox
       );
     },
@@ -60,7 +60,7 @@ if (L && L.TileLayer && L.TileLayer.WMS) {
     return new L.TileLayer.WMSOffset(url, options);
   };
 } else {
-  throw Error("You must import the leaflet.js before.");
+  throw Error('You must import the leaflet.js before.');
 }
 
 /* 
@@ -102,5 +102,5 @@ if (L && L.TileLayer) {
     return new L.TileLayerOffset(url, options);
   };
 } else {
-  throw Error("You must import the leaflet.js before.");
+  throw Error('You must import the leaflet.js before.');
 }
